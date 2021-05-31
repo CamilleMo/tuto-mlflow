@@ -34,4 +34,3 @@ if __name__ == "__main__":
     mlflow.log_metric("training_r2", r2_score(y, y_hat))
     mlflow.log_metric("training_mse", mean_squared_error(y, y_hat))
     mlflow.sklearn.log_model(reg, "lin_reg_model")
-    print(BigX_df.to_json("file.json", orient='split'))

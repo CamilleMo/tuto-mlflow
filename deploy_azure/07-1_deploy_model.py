@@ -8,7 +8,7 @@ from azureml.exceptions import ComputeTargetException
 
 import mlflow.azureml
 
-from xx_secrets import subscription_id
+from secrets import subscription_id
 
 workspace_name = "ml-deployment-platform"
 workspace_location = "West Europe"

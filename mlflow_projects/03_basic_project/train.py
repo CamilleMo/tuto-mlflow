@@ -8,10 +8,8 @@ mlflow.set_tracking_uri("http://localhost:5000")
 if __name__ == "__main__":
     np.random.seed(26)
 
-    eta = float(sys.argv[1])  # 0.1
-    #mlflow.log_param("learning_rate", eta)
-    n_iter = int(sys.argv[2])  # 100
-    #mlflow.log_param("number_of_epochs", n_iter)
+    eta = float(sys.argv[1])
+    n_iter = int(sys.argv[2])
     n_points = 100
 
     x1 = np.random.randn(n_points)
@@ -22,7 +20,6 @@ if __name__ == "__main__":
     Y = Y + (np.random.randn(n_points) / 1)  # adding some noise
 
     FIT_INTERCEPT = True if sys.argv[3] == "true" else False
-    # mlflow.log_param("intercept", FIT_INTERCEPT)
 
     if FIT_INTERCEPT:
         BigX = np.array([np.ones(n_points), x1, x2, x3]).T
