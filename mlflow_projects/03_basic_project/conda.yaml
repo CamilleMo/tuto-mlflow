@@ -1,0 +1,9 @@
+name: basic_project
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - numpy
+  - pip
+  - pip:
+    - mlflow>=1.0

@@ -1,0 +1,1 @@
+pipenv run python tracking_api/01_logging.py
