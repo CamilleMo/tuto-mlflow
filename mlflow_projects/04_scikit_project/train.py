@@ -9,12 +9,12 @@ import mlflow.sklearn
 
 mlflow.set_tracking_uri("http://localhost:5000")
 
-n_points=100
+n_points = 100
 
 if __name__ == "__main__":
     np.random.seed(26)
 
-    fit_intercept = True if sys.argv[1]=="true" else False
+    fit_intercept = True if sys.argv[1] == "true" else False
 
     x1 = np.random.randn(n_points)
     x2 = np.random.randn(n_points)
