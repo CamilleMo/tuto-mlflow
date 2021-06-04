@@ -34,7 +34,7 @@ except:
     print("The service does not exist yet.")
 service = AksWebservice if env == "prod" else AciWebservice
 service_config = service.deploy_configuration(cpu_cores=1, memory_gb=1)
-#AksWebservice.deploy_configuration
+AksWebservice.deploy_configuration
 
 if env == "prod":
     
@@ -53,9 +53,7 @@ if env == "prod":
         print(aks_target.provisioning_state)
         print(aks_target.provisioning_errors)
 
-    service_config = service.deploy_configuration(
-        cpu_cores=2, memory_gb=1, compute_target_name=aks_name,
-    )
+    service_config = service.deploy_configuration(compute_target_name=aks_name)
 
 azure_service, azure_model = mlflow.azureml.deploy(
     model_uri=model_uri,
