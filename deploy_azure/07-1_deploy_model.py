@@ -22,7 +22,7 @@ workspace = Workspace.create(
     exist_ok=True,
 )
 
-model_name = sys.argv[1]  # "LinearRegressionModel"
+model_name = sys.argv[1]
 model_uri = f"models:/{model_name}/{sys.argv[2]}"
 
 env = "prod" if sys.argv[3].lower() == "prod" else "uat"
@@ -32,10 +32,9 @@ try:
     Webservice(workspace, service_name).delete()
 except:
     print("The service does not exist yet.")
-# Webservice.check_for_existing_webservice(workspace=workspace, name=service_name, check_func=Webservice.delete)
 service = AksWebservice if env == "prod" else AciWebservice
 service_config = service.deploy_configuration(cpu_cores=1, memory_gb=1)
-AksWebservice.deploy_configuration
+#AksWebservice.deploy_configuration
 
 if env == "prod":
     
@@ -44,7 +43,7 @@ if env == "prod":
     # Create the cluster
     try:  
         cpu_cluster = ComputeTarget(workspace=workspace, name=aks_name)  
-        print('Found existing cluster, use it.')  
+        print(f'Found existing cluster, use it: {cpu_cluster}')  
     except ComputeTargetException:
         prov_config = AksCompute.provisioning_configuration(3,"Standard_DS2_v2")
         aks_target = ComputeTarget.create(
@@ -55,7 +54,7 @@ if env == "prod":
         print(aks_target.provisioning_errors)
 
     service_config = service.deploy_configuration(
-        cpu_cores=1, memory_gb=1, compute_target_name=aks_name,
+        cpu_cores=2, memory_gb=1, compute_target_name=aks_name,
     )
 
 azure_service, azure_model = mlflow.azureml.deploy(
