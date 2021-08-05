@@ -1,4 +1,4 @@
-FROM gitpod/workspace-full:latest
+FROM gitpod/workspace-full:commit-d57c5f4b47a2df0bad344ff6c6a0209bd862a352
 USER gitpod
 RUN sudo apt-get update && sudo apt-get install -y zsh && \
     wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh && \
