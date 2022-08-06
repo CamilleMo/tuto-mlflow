@@ -6,8 +6,10 @@ ports:
     onOpen: open-browser
     visibility: private
 tasks:
-  - init: pipenv sync
-    command: pipenv run mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root /workspace/tuto-mlflow/artifacts --host 0.0.0.0
+  - init: python -m venv .venv
+    command: |
+      source .venv/bin/activate
+      pip install pip-tools
 
 vscode:
   extensions:
