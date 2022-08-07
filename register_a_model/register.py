@@ -1,13 +1,15 @@
 import mlflow
 
 experiment_name = "scikit_project"
-current_experiment = dict(mlflow.get_experiment_by_name(experiment_name))
-experiment_id = current_experiment["experiment_id"]
+current_experiment = mlflow.get_experiment_by_name(experiment_name)
+# experiment_id = current_experiment["experiment_id"]
+print("EXPERIMENT", current_experiment)
 
 
 df = mlflow.search_runs([experiment_id], order_by=["metrics.training_mse ASC"])
-# df.to_csv("all_runs.csv")
+df.to_csv("all_runs.csv")
 best_run_id = df.iloc[0, df.columns.get_loc("run_id")]
+print("BEST RUN:", best_run_id)
 print("=" * 40)
 print("Best run has an MSE of ", df.iloc[0, df.columns.get_loc("metrics.training_mse")])
 print("ID: ", best_run_id)
