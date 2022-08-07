@@ -1,18 +1,18 @@
-pipenv run python tracking_api/02_first_model.py 0.01 10 true
-pipenv run python tracking_api/02_first_model.py 0.01 10 false
-pipenv run python tracking_api/02_first_model.py 0.01 50 true
-pipenv run python tracking_api/02_first_model.py 0.01 50 false
-pipenv run python tracking_api/02_first_model.py 0.01 100 true
-pipenv run python tracking_api/02_first_model.py 0.01 100 false
-pipenv run python tracking_api/02_first_model.py 0.05 10 true
-pipenv run python tracking_api/02_first_model.py 0.05 10 false
-pipenv run python tracking_api/02_first_model.py 0.05 50 true
-pipenv run python tracking_api/02_first_model.py 0.05 50 false
-pipenv run python tracking_api/02_first_model.py 0.05 100 true
-pipenv run python tracking_api/02_first_model.py 0.05 100 false
-pipenv run python tracking_api/02_first_model.py 0.1 10 true
-pipenv run python tracking_api/02_first_model.py 0.1 10 false
-pipenv run python tracking_api/02_first_model.py 0.1 50 true
-pipenv run python tracking_api/02_first_model.py 0.1 50 false
-pipenv run python tracking_api/02_first_model.py 0.1 100 true
-pipenv run python tracking_api/02_first_model.py 0.1 100 false
+python tracking_api/02_first_model.py 0.01 10 false
+python tracking_api/02_first_model.py 0.01 10 true
+python tracking_api/02_first_model.py 0.01 50 true
+python tracking_api/02_first_model.py 0.01 50 false
+python tracking_api/02_first_model.py 0.01 100 true
+python tracking_api/02_first_model.py 0.01 100 false
+python tracking_api/02_first_model.py 0.05 10 true
+python tracking_api/02_first_model.py 0.05 10 false
+python tracking_api/02_first_model.py 0.05 50 true
+python tracking_api/02_first_model.py 0.05 50 false
+python tracking_api/02_first_model.py 0.05 100 true
+python tracking_api/02_first_model.py 0.05 100 false
+python tracking_api/02_first_model.py 0.1 10 true
+python tracking_api/02_first_model.py 0.1 10 false
+python tracking_api/02_first_model.py 0.1 50 true
+python tracking_api/02_first_model.py 0.1 50 false
+python tracking_api/02_first_model.py 0.1 100 true
+python tracking_api/02_first_model.py 0.1 100 false

@@ -6,11 +6,12 @@ ports:
     onOpen: open-browser
     visibility: private
 tasks:
-  - init: python -m venv .venv
-    command: |
+  - init: |
+      python -m venv .venv
       source .venv/bin/activate
       pip install -r requirements_dev.txt
       pip install -r requirements.txt
+    command: mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root /workspace/tuto-mlflow/artifacts --host 0.0.0.0
 
 vscode:
   extensions:
