@@ -37,15 +37,15 @@ service_config = service.deploy_configuration(cpu_cores=1, memory_gb=1)
 AksWebservice.deploy_configuration
 
 if env == "prod":
-    
+
     aks_name = "aks-mlflow"
 
     # Create the cluster
-    try:  
-        cpu_cluster = ComputeTarget(workspace=workspace, name=aks_name)  
-        print(f'Found existing cluster, use it: {cpu_cluster}')  
+    try:
+        cpu_cluster = ComputeTarget(workspace=workspace, name=aks_name)
+        print(f"Found existing cluster, use it: {cpu_cluster}")
     except ComputeTargetException:
-        prov_config = AksCompute.provisioning_configuration(3,"Standard_DS2_v2")
+        prov_config = AksCompute.provisioning_configuration(3, "Standard_DS2_v2")
         aks_target = ComputeTarget.create(
             workspace=workspace, name=aks_name, provisioning_configuration=prov_config
         )
