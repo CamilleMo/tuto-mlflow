@@ -1,2 +1,7 @@
-artifacts
 .venv/
+
+artifacts
+all_runs.csv
+mlflow.db
+mlruns/
+results/

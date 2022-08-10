@@ -1,9 +1,11 @@
 import mlflow
 
+mlflow.set_tracking_uri("http://localhost:5000")
 experiment_name = "scikit_project"
 current_experiment = mlflow.get_experiment_by_name(experiment_name)
-# experiment_id = current_experiment["experiment_id"]
+experiment_id = current_experiment.experiment_id
 print("EXPERIMENT", current_experiment)
+print(mlflow.list_experiments())
 
 
 df = mlflow.search_runs([experiment_id], order_by=["metrics.training_mse ASC"])

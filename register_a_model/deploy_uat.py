@@ -1,5 +1,7 @@
+import mlflow
 from mlflow.tracking import MlflowClient
 
+mlflow.set_tracking_uri("http://localhost:5000")
 client = MlflowClient()
 model_name_to_deploy = "LinearRegressionModel"
 client.transition_model_version_stage(
